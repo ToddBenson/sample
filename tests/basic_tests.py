@@ -1,3 +1,4 @@
+"""test the kata exercise"""
 from context import add_binary
 
 
