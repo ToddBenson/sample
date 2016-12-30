@@ -1,6 +1,10 @@
 """Add two numbers together and convert to binary"""
+import math
 
 
-def add_binary(a, b):
-    """add two numbers and convert to binary"""
-    return "{0:b}".format(a + b)
+def is_square(integer):
+    """Calculate the sqrt"""
+    if integer < 1:
+        return False
+    root = math.sqrt(integer)
+    return int(root + 0.5) ** 2 == integer
