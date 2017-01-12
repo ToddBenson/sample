@@ -11,7 +11,7 @@ def test2():
 
 
 def test3():
-    assert maxSequence([1, 2, -4, 3, -7, 8, 9]) == 17
+    assert maxSequence([1, 2, -4, 3, -7, 8, 9]) == 9
 
 
 def test4():

@@ -15,12 +15,4 @@ array is also a valid sublist/subarray.
 
 
 def maxSequence(arr):
-    # return 0 if (len(arr) == 0) or (max(arr) < 0) else True
-    if (len(arr) == 0) or (max(arr) < 0):
-        return 0
-    x = 0
-    for i in range(len(arr)):
-        for j in range(len(arr)):
-            if sum(arr[i:len(arr) - j]) > x:
-                x = sum(arr[i:len(arr) - j])
-    return x
+    return 0 if (len(arr) == 0) or (max(arr) < 0) else max([sum(arr[i:len(arr) - j]) for j in range(len(arr)) for i in range(len(arr))])
