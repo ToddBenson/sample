@@ -1,10 +1,26 @@
-"""Add two numbers together and convert to binary"""
-import math
+"""
+The maximum sum subarray problem consists in finding the maximum sum of a
+contiguous subsequence in an array or list of integers:
+
+maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+# should be 6: [4, -1, 2, 1]
+
+Easy case is when the list is made up of only positive numbers and the maximum
+sum is the sum of the whole array. If the list is made up of only negative
+numbers, return 0 instead.
+
+Empty list is considered to have zero greatest sum. Note that the empty list or
+array is also a valid sublist/subarray.
+"""
 
 
-def is_square(integer):
-    """Calculate the sqrt"""
-    if integer < 1:
-        return False
-    root = math.sqrt(integer)
-    return int(root + 0.5) ** 2 == integer
+def maxSequence(arr):
+    # return 0 if (len(arr) == 0) or (max(arr) < 0) else True
+    if (len(arr) == 0) or (max(arr) < 0):
+        return 0
+    x = 0
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if sum(arr[i:len(arr) - j]) > x:
+                x = sum(arr[i:len(arr) - j])
+    return x

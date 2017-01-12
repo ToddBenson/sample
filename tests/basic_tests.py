@@ -1,23 +1,35 @@
-"""test the kata exercise"""
-from context import is_square
-import random
+"""test the kata task"""
+from context import maxSequence
 
 
 def test1():
-    assert is_square(-1) is False
-
-
-def test():
-    assert is_square(3) is False
+    assert maxSequence([]) == 0
 
 
 def test2():
-    assert is_square(4) is True
+    assert maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
 
 
 def test3():
-    assert is_square(25) is True
+    assert maxSequence([1, 2, -4, 3, -7, 8, 9]) == 17
 
 
 def test4():
-    assert is_square(26) is False
+    assert maxSequence([1, 2, 3, 4, 5, 1]) == 16
+
+# [-1] [-1, 3] [-1, 3, 4] [-1, 3, 4, 5]
+# [3] [3, 4] [3, 4, 5]
+# [4] [4, 5]
+# [5]
+
+
+def test5():
+    assert maxSequence([-1, 3, 4, 5]) == 12
+
+
+def test6():
+    assert maxSequence([-1, -3, -4, -5]) == 0
+
+
+def test7():
+    assert maxSequence([1, 3, 4, -5]) == 8
